@@ -248,6 +248,27 @@
     @media (max-width: 480px) {
         .church-name { display: none; }
     }
+
+        /* Ensure all ministry images are the same size and look clean */
+.m-card img {
+    width: 100%;
+    height: 250px; /* Adjust height to match your other cards */
+    object-fit: cover; /* This prevents the image from stretching */
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.m-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.m-card:hover {
+    transform: translateY(-5px);
+}
     </style>
 </head>
 <body>
@@ -528,6 +549,7 @@ backToTopBtn.addEventListener('click', () => {
 </body>
 
 </html>
+
 
 
 
