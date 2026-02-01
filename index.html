@@ -379,6 +379,20 @@
     50% { transform: scale(1.03); }
     100% { transform: scale(1); }
 }
+
+        /* Specific styling for the Service/Involved Button */
+.service-btn {
+    background-color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    margin-top: 15px;
+}
+
+.service-btn:hover {
+    background-color: transparent;
+    color: var(--primary-green);
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(46, 92, 72, 0.2);
+}
     </style>
 </head>
 <body>
@@ -451,12 +465,14 @@
         <a href="media.html" class="card-btn">Watch Now →</a>
     </div>
 </div>
-            <a href="ministries.html" class="f-card">
-                <i>🤝</i>
-                <h3>Get Involved</h3>
-                <p>From Pathfinders to Community Service, find a place where you can grow and serve.</p>
-                <a href="ministries.html" class="card-btn">Join Now</a>
-            </a>
+           <div class="f-card">
+    <div class="f-card-content">
+        <i>🤝</i>
+        <h3>Get Involved</h3>
+        <p>From Pathfinders to Community Service, find a place where you can grow and serve.</p>
+        <a href="ministries.html" class="card-btn service-btn">Join a Ministry →</a>
+    </div>
+</div>
            <div class="f-card">
     <div class="f-card-content">
         <i>🙏</i>
@@ -676,6 +692,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 </html>
+
 
 
 
