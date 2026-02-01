@@ -252,10 +252,18 @@
         font-size: 1.2rem;
     }
     
-    /* On mobile, you might want to hide the name and just show the logo to save space */
     @media (max-width: 480px) {
-        .church-name { display: none; }
+    .church-name { 
+        display: block; /* Ensures it is visible */
+        font-size: 0.85rem; /* Shrinks the text so it fits */
+        max-width: 150px; /* Prevents it from crashing into the hamburger menu */
+        line-height: 1.2;
     }
+    
+    .logo-container {
+        gap: 8px; /* Tightens the space between logo and text */
+    }
+}
     </style>
 </head>
 <body>
@@ -527,6 +535,7 @@ backToTopBtn.addEventListener('click', () => {
 </body>
 
 </html>
+
 
 
 
