@@ -332,6 +332,53 @@
         width: 100%;
     }
 }
+
+        .card-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: var(--primary-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-green);
+}
+
+.card-btn:hover {
+    background-color: transparent;
+    color: var(--primary-green);
+    transform: translateX(5px); /* Subtle nudge to the right */
+}
+
+/* Ensure the card itself is no longer a clickable link globally */
+.f-card {
+    cursor: default;
+}
+        /* Specific styling for the Prayer Button */
+.prayer-btn {
+    background-color: var(--accent-gold); /* Using gold for a warmer, spiritual feel */
+    border-color: var(--accent-gold);
+}
+
+.prayer-btn:hover {
+    background-color: transparent;
+    color: var(--accent-gold);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
+
+/* Optional: Pulse animation to draw attention to the prayer request */
+.prayer-btn {
+    animation: gentlePulse 3s infinite;
+}
+
+@keyframes gentlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
     </style>
 </head>
 <body>
@@ -339,7 +386,7 @@
    <nav>
     <a href="index.html" class="logo-container">
         <img src="adventist-symbol-circle--denim.png" alt="SDA Logo" class="sda-logo">
-        <span class="church-name">Mothutlung Seventh-day Adventist Church</span>
+        <span class="church-name">Mothotlung Seventh-day Adventist Church</span>
     </a>
     <div class="hamburger" id="hamburger">
         <span></span>
@@ -396,21 +443,28 @@
     <section class="features">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Explore Our Church</h2>
         <div class="feature-grid">
-            <a href="media.html" class="f-card">
-                <i>📖</i>
-                <h3>Watch Sermons</h3>
-                <p>Catch up on our latest message or join our live stream every Sabbath morning.</p>
-            </a>
+            <div class="f-card">
+    <div class="f-card-content">
+        <i>📖</i>
+        <h3>Watch Sermons</h3>
+        <p>Catch up on our latest message or join our live stream every Sabbath morning.</p>
+        <a href="media.html" class="card-btn">Watch Now →</a>
+    </div>
+</div>
             <a href="ministries.html" class="f-card">
                 <i>🤝</i>
                 <h3>Get Involved</h3>
                 <p>From Pathfinders to Community Service, find a place where you can grow and serve.</p>
+                <a href="ministries.html" class="card-btn">Join Now</a>
             </a>
-            <a href="connect.html" class="f-card">
-                <i>🙏</i>
-                <h3>Prayer Support</h3>
-                <p>Life is hard, but you don't have to walk alone. Let us lift you up in prayer.</p>
-            </a>
+           <div class="f-card">
+    <div class="f-card-content">
+        <i>🙏</i>
+        <h3>Prayer Support</h3>
+        <p>Life is hard, but you don't have to walk alone. Let us lift you up in prayer.</p>
+        <a href="connect.html" class="card-btn prayer-btn">Request Prayer ♡</a>
+    </div>
+</div>
         </div>
     </section>
 <button id="backToTop" class="back-to-top" title="Go to top">↑</button>
@@ -622,6 +676,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 </html>
+
 
 
 
