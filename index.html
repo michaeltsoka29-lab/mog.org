@@ -427,6 +427,35 @@
     cursor: pointer;
     font-weight: 600;
 }
+
+
+
+
+
+
+
+
+        /* Styling for the Privacy link inside the banner */
+.cookie-policy-link {
+    color: var(--primary-green);
+    text-decoration: underline;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+.cookie-policy-link:hover {
+    color: var(--accent-gold);
+}
+
+/* Ensure the banner doesn't cover important buttons on very small phones */
+@media (max-width: 400px) {
+    #cookie-banner {
+        padding: 15px;
+        bottom: 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -731,12 +760,16 @@ window.onload = function() {
 </script>
 
     <div id="cookie-banner">
-    <p>We use cookies to ensure you get the best experience at Mothutlung SDA Church online. 🛡️</p>
+    <p>
+        We use cookies to ensure you get the best experience at Mothutlung SDA Church online. 🛡️ 
+        <a href="privacy.html" class="cookie-policy-link">Learn how we protect your data.</a>
+    </p>
     <button class="cookie-btn" onclick="acceptCookies()">Accept & Close</button>
 </div>
 </body>
 
 </html>
+
 
 
 
