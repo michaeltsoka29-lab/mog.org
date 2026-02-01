@@ -21,6 +21,7 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
+            background-color: var(--white);
         }
 
         /* --- NAVIGATION --- */
@@ -28,82 +29,95 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 15px 8%;
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .sda-logo { height: 40px; width: auto; }
+
+        .church-name {
             font-weight: 700;
             color: var(--primary-green);
-            text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
             margin-left: 25px;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
         }
+
+        .nav-links a:hover { color: var(--accent-gold); }
 
         /* --- HERO SECTION --- */
         .location-hero {
-            background-color: var(--accent-gold);
+            background: linear-gradient(rgba(46, 92, 72, 0.8), rgba(46, 92, 72, 0.8)), 
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
             color: var(--white);
-            padding: 80px 8%;
+            padding: 100px 8%;
             text-align: center;
         }
 
         .location-hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin: 0;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin: 0 0 10px;
         }
 
-        /* --- MAIN CONTENT CONTAINER --- */
+        /* --- MAIN CONTENT LAYOUT --- */
         .container {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 5%;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 50px;
         }
 
-        /* --- LEFT SIDE: MAP & DIRECTIONS --- */
+        /* --- LEFT SIDE --- */
         .map-wrapper {
             width: 100%;
-            height: 450px;
+            height: 400px;
             background: #eee;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+        iframe { width: 100%; height: 100%; border: 0; }
 
         .directions-card {
             margin-top: 30px;
-            padding: 30px;
+            padding: 35px;
             background: var(--soft-beige);
             border-radius: 12px;
+            border-left: 5px solid var(--accent-gold);
         }
 
-        /* --- RIGHT SIDE: TIMES & FAQ --- */
+        /* --- RIGHT SIDE --- */
         .info-panel h2 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-green);
             border-bottom: 2px solid var(--accent-gold);
-            display: inline-block;
-            margin-bottom: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
         }
 
         .service-time {
@@ -112,133 +126,74 @@
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
+            transition: 0.3s;
         }
+        
+        .service-time:hover { border-color: var(--accent-gold); }
 
-        .service-time h4 {
-            margin: 0 0 5px 0;
-            color: var(--primary-green);
-        }
+        .service-time h4 { margin: 0 0 5px 0; color: var(--primary-green); font-size: 1.1rem; }
 
-        .faq-item {
-            margin-bottom: 20px;
-        }
+        .faq-item { margin-bottom: 25px; }
+        .faq-item strong { display: block; color: var(--primary-green); margin-bottom: 5px; }
 
-        .faq-item strong {
-            display: block;
-            color: var(--primary-green);
-            margin-bottom: 5px;
-        }
-
-        /* --- CTA BUTTON --- */
         .btn-directions {
             display: inline-block;
             background: var(--primary-green);
             color: white;
-            padding: 15px 30px;
+            padding: 15px 35px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            margin-top: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-top: 20px;
             transition: 0.3s;
         }
 
         .btn-directions:hover {
-            background: #1e3d30;
-            transform: translateY(-2px);
+            background: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* --- MOBILE RESPONSIVENESS --- */
+        /* --- HAMBURGER --- */
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .hamburger span { width: 25px; height: 3px; background: var(--primary-green); border-radius: 2px; }
+
+        /* --- FOOTER STYLES --- */
+        .site-footer { background-color: #1b362a; color: #ffffff; padding: 80px 8% 30px; }
+        .footer-content { 
+            display: grid; 
+            grid-template-columns: 1.5fr 1fr 1fr; 
+            gap: 50px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 15px; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links a { color: white; opacity: 0.7; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links a:hover { opacity: 1; color: var(--accent-gold); }
+
+        /* --- MOBILE --- */
         @media (max-width: 900px) {
             .container { grid-template-columns: 1fr; }
-            .location-hero h1 { font-size: 2.2rem; }
+            nav { padding: 15px 5%; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .nav-links.active {
+                display: flex; flex-direction: column; position: absolute; top: 70px; left: 0;
+                width: 100%; background: white; padding: 20px 0; text-align: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            .nav-links a { margin: 10px 0; }
+            .church-name { font-size: 0.85rem; max-width: 180px; }
         }
-        /* --- HAMBURGER MENU STYLES --- */
-.hamburger {
-    display: none; /* Hidden by default on desktop */
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-green);
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-/* MOBILE RESPONSIVENESS (Screens smaller than 768px) */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex; /* Show hamburger */
-    }
-
-    .nav-links {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 70px; /* Adjust based on nav height */
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        padding: 20px 0;
-        text-align: center;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-        display: flex; /* Show links when "active" class is added */
-    }
-
-    .nav-links a {
-        margin: 15px 0;
-    }
-
-    /* Animation: Turn hamburger into an 'X' when active */
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-.logo-container {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-    }
-
-    .sda-logo {
-        height: 40px; /* Adjust size as needed */
-        width: auto;
-    }
-
-    .church-name {
-        font-weight: 700;
-        color: var(--primary-green);
-        font-size: 1.2rem;
-    }
-    
-   @media (max-width: 480px) {
-    .church-name { 
-        display: block; /* Ensures it is visible */
-        font-size: 0.85rem; /* Shrinks the text so it fits */
-        max-width: 150px; /* Prevents it from crashing into the hamburger menu */
-        line-height: 1.2;
-    }
-    
-    .logo-container {
-        gap: 8px; /* Tightens the space between logo and text */
-    }
-}
     </style>
 </head>
 <body>
+
 <nav>
     <a href="index.html" class="logo-container">
         <img src="adventist-symbol-circle--denim.png" alt="SDA Logo" class="sda-logo">
@@ -246,22 +201,20 @@
     </a>
     
     <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </div>
 
     <div class="nav-links" id="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="location.html"style="color: var(--accent-gold);">Visit</a>
+        <a href="location.html" style="color: var(--accent-gold);">Visit</a>
         <a href="ministries.html">Ministries</a>
         <a href="media.html">Sermons</a>
         <a href="connect.html">Connect</a>
     </div>
 </nav>
 
-    <header class="location-hero">
+<header class="location-hero">
     <h1>Visit Us This Sabbath</h1>
     <p>There is a seat waiting for you. Come as you are!</p>
 </header>
@@ -270,83 +223,70 @@
     <div class="main-info">
         <div class="map-wrapper">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.654!2d27.838!3d-25.618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM3JzA0LjgiUyAyN8KwNTAnMTYuOCJF!5e0!3m2!1sen!2sza!4v1700000000000" 
-                allowfullscreen="" 
-                loading="lazy">
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.564!2d27.91!3d-25.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM1JzI0LjAiUyAyN8KwNTQnNDAuMCJF!5e0!3m2!1sen!2sza!4v1643380000000!5m2!1sen!2sza" 
+                allowfullscreen="" loading="lazy">
             </iframe>
         </div>
 
         <div class="directions-card">
-            <h3>Getting Here</h3>
-            
+            <h3>Find Your Way</h3>
             <p><strong>Physical Address:</strong><br>
-            Katakane St, Mothutlung,<br>
-            Brits, 0250, North West</p>
+            123 Katakane St, Mothutlung, Brits, 0250</p>
 
             <p><strong>Mailing Address:</strong><br>
             P.O. BOX 974, Brits, 0250</p>
 
-            <p><strong>Parking:</strong> We have a large, free parking lot located directly at the entrance. Accessible parking spaces are available right next to the front entrance.</p>
+            <p><strong>Parking:</strong> Free parking is available inside the church gates. Our deacons will be there to assist you.</p>
             
-            <p><strong>Public Transit:</strong> The Thari Bus stops just one block away at the Katakane Street intersection.</p>
+            <p><strong>Public Transit:</strong> The Thari Bus stops near the Katakane Street intersection, just a short walk to our entrance.</p>
             
-            <a href="https://www.google.com/maps/search/?api=1&query=Mothutlung+SDA+Church+Katakane+St+Brits" 
-               target="_blank" 
-               class="btn-directions">
-               Open in Google Maps
-            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Mothutlung+SDA+Church+Brits" target="_blank" class="btn-directions">Open in Google Maps</a>
+        </div>
+    </div>
+
+    <div class="info-panel">
+        <h2>Service Times</h2>
+        
+        <div class="service-time">
+            <h4>Sabbath School</h4>
+            <p>Saturdays @ 09:00 AM — Interactive Bible study for all ages.</p>
+        </div>
+
+        <div class="service-time">
+            <h4>Divine Service</h4>
+            <p>Saturdays @ 11:00 AM — Worship through song, prayer, and the Word.</p>
+        </div>
+
+        <div class="service-time">
+            <h4>Afternoon Lessons</h4>
+            <p>Saturdays @ 14:30 PM — Youth and specialized programs.</p>
+        </div>
+
+        <h2 style="margin-top: 40px;">Common Questions</h2>
+        
+        <div class="faq-item">
+            <strong>What should I wear?</strong>
+            <p>You’ll see a mix of formal and casual. We value your presence more than your outfit!</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Are children welcome?</strong>
+            <p>Absolutely. We have dedicated classes for children to learn about Jesus in a fun way.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Is there a fellowship meal?</strong>
+            <p>Yes! We often share a vegetarian lunch after the Divine Service. Please stay and eat with us.</p>
         </div>
     </div>
 </div>
 
-        <div class="info-panel">
-            <h2>Service Times</h2>
-            
-            <div class="service-time">
-                <h4>Sabbath School (Bible Study)</h4>
-                <p>Saturdays @ 9:00 AM - 9:30 AM — Classes for all ages, from toddlers to adults.</p>
-            </div>
-
-            <div class="service-time">
-                <h4>Divine Service</h4>
-                <p>Saturdays @ 11:00 AM - 12:00 AM  — Join us for singing, prayer, and a message from the Word.</p>
-            </div>
-
-            <div class="service-time">
-                <h4>Afternoon Lessons</h4>
-                <p>Saturdays 2:30 PM.</p>
-            </div>
-
-            <h2 style="margin-top: 40px;">Common Questions</h2>
-            
-            <div class="faq-item">
-                <strong>What should I wear?</strong>
-                <p>You'll see everything from suits to jeans. Wear whatever makes you feel comfortable and respectful.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>What about my children?</strong>
-                <p>We provide safe, fun, and age-appropriate Bible classes for children during the 9:30 AM hour.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Is there a lunch?</strong>
-                <p>Yes! Most Sabbaths we share a vegetarian "Potluck" meal after the 12:00 PM service. You are our honored guest!</p>
-            </div>
-        </div>
-
-    </div>
-
-    <footer class="site-footer">
+<footer class="site-footer">
     <div class="footer-content">
         <div class="footer-column">
-            <h3 class="footer-logo">Mothotlung Seventh-day Adventist Church</h3>
-            <p class="footer-tagline">A Seventh-day Adventist community growing in grace and waiting in hope.</p>
-            <div class="social-icons">
-                <a href="https://m.facebook.com/mothotlungsda/">FB</a>
-                <a href="#">YT</a>
-                <a href="#">IG</a>
-            </div>
+            <h3 class="footer-logo">Mothutlung SDA Church</h3>
+            <p class="footer-tagline">Growing in grace, waiting in hope.</p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">mothutlung@toc.adventist.org</p>
         </div>
 
         <div class="footer-column">
@@ -354,159 +294,36 @@
             <ul class="footer-links">
                 <li><a href="about.html">Our Beliefs</a></li>
                 <li><a href="ministries.html">Ministries</a></li>
-                <li><a href="media.html">Sermon Archive</a></li>
-                <li><a href="connect.html">Giving</a></li>
+                <li><a href="media.html">Sermons</a></li>
+                <li><a href="connect.html">Contact Us</a></li>
             </ul>
         </div>
 
         <div class="footer-column">
             <h4>Visit Us</h4>
-            <p>pls tell me our church location i don't know<br>Cityville, ST 12345</p>
-            <p><strong>Saturdays:</strong> 9:30 AM & 11:00 AM</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                Katakane St, Mothutlung<br>
+                Brits, North West, 0250
+            </p>
+            <p><strong>Sabbath:</strong> 09:00 AM - 16:30 PM</p>
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <div class="copyright">
-            &copy; 2026 Mothutlung Seventh-day Adventist Church. All Rights Reserved.
-        </div>
-        <div class="credits">
-         &bull; Secured by <span class="credit-brand">Hexert</span>
-        </div>
+    <div class="footer-bottom" style="max-width: 1200px; margin: 30px auto 0; display: flex; justify-content: space-between; font-size: 0.8rem; opacity: 0.6;">
+        <div>© 2026 Mothutlung SDA Church.</div>
+        <div>Secured by <span style="color:var(--accent-gold); font-weight:700;">Hexert</span></div>
     </div>
 </footer>
 
-<style>
-    /* --- FOOTER STYLES --- */
-    .site-footer {
-        background-color: #1b362a; /* Slightly darker than primary green for depth */
-        color: #ffffff;
-        padding: 80px 8% 30px;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .footer-content {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr;
-        gap: 50px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-bottom: 50px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-logo {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.8rem;
-        color: var(--accent-gold);
-        margin-bottom: 15px;
-    }
-
-    .footer-tagline {
-        opacity: 0.8;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        max-width: 300px;
-    }
-
-    .footer-column h4 {
-        color: var(--accent-gold);
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        letter-spacing: 2px;
-        margin-bottom: 25px;
-    }
-
-    .footer-links {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 12px;
-    }
-
-    .footer-links a {
-        color: white;
-        text-decoration: none;
-        opacity: 0.7;
-        transition: 0.3s;
-        font-size: 0.9rem;
-    }
-
-    .footer-links a:hover {
-        opacity: 1;
-        padding-left: 5px;
-        color: var(--accent-gold);
-    }
-
-    .social-icons a {
-        display: inline-block;
-        margin-right: 15px;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        opacity: 0.8;
-    }
-
-    /* --- CREDITS BAR --- */
-    .footer-bottom {
-        max-width: 1200px;
-        margin: 30px auto 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.8rem;
-        opacity: 0.6;
-    }
-
-    .credit-brand {
-        font-weight: 700;
-        color: var(--accent-gold);
-        letter-spacing: 0.5px;
-    }
-
-    /* Responsive */
-    @media (max-width: 850px) {
-        .footer-content {
-            grid-template-columns: 1fr;
-            text-align: center;
-        }
-        .footer-tagline {
-            margin: 0 auto;
-        }
-        .footer-bottom {
-            flex-direction: column;
-            gap: 15px;
-            text-align: center;
-        }
-    }
-</style>
 <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
 
     hamburger.addEventListener('click', () => {
-        // Toggle the "active" class on both the icon and the links
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
-
-    // Close menu when a link is clicked (useful for one-page sites)
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
 </script>
+
 </body>
-
 </html>
-
-
-
-
-
-
-
