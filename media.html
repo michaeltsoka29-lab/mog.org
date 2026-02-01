@@ -154,6 +154,61 @@
             .nav-links.active { display: flex; }
         }
         .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--accent-gold); color: white; border: none; border-radius: 50%; cursor: pointer; display: none; z-index: 999; }
+
+        .radio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.radio-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.radio-card:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.radio-icon {
+    font-size: 2rem;
+    background: var(--soft-beige);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.radio-info h4 {
+    margin: 0;
+    color: var(--primary-green);
+}
+
+.radio-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 5px 0 10px;
+}
+
+audio {
+    height: 30px;
+    width: 180px;
+}
+
+/* Customizing the audio player width for mobile */
+@media (max-width: 480px) {
+    audio { width: 100%; }
+}
     </style>
 </head>
 <body>
@@ -266,7 +321,42 @@
             </div>
         </div>
     </div>
+<h2 class="section-title">Adventist Radio Global</h2>
+<div class="radio-grid">
+    <div class="radio-card">
+        <div class="radio-icon">🎙️</div>
+        <div class="radio-info">
+            <h4>AWR Africa</h4>
+            <p>Adventist World Radio</p>
+            <audio controls>
+                <source src="https://radio.awr.org/stream/africawide" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
 
+    <div class="radio-card">
+        <div class="radio-icon">📻</div>
+        <div class="radio-info">
+            <h4>Radio 74</h4>
+            <p>International Network</p>
+            <audio controls>
+                <source src="http://peace.str3am.com:8080/radio74" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <div class="radio-card">
+        <div class="radio-icon">📡</div>
+        <div class="radio-info">
+            <h4>Voice of Prophecy</h4>
+            <p>Bible Discovery</p>
+            <audio controls>
+                <source src="https://vop.stream.streamaudio.com/vop_high" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</div>
 </main>
 
 <footer class="site-footer">
@@ -440,6 +530,7 @@
 </script>
 </body>
 </html>
+
 
 
 
