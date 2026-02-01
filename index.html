@@ -393,6 +393,40 @@
     font-weight: 700;
     box-shadow: 0 5px 15px rgba(46, 92, 72, 0.2);
 }
+
+        #cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 9999; /* This ensures it stays on top of the map and nav */
+    display: none; /* Hidden by default, shown by JS */
+    border: 1px solid var(--accent-gold);
+    text-align: center;
+}
+
+#cookie-banner p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.cookie-btn {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+}
     </style>
 </head>
 <body>
@@ -522,12 +556,7 @@
         </div>
     </div>
 </footer>
-<div id="cookieBanner" class="cookie-container">
-    <div class="cookie-content">
-        <p>This website uses cookies to ensure you get the best experience on our site. <a href="about.html">Learn more</a></p>
-        <button id="acceptCookies" class="cookie-btn">Accept & Close</button>
-    </div>
-</div>
+
 <style>
     /* --- FOOTER STYLES --- */
     .site-footer {
@@ -688,10 +717,27 @@ document.addEventListener("DOMContentLoaded", function() {
         banner.classList.remove("show");
     });
 });
+
+    function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+}
 </script>
+
+    <div id="cookie-banner">
+    <p>We use cookies to ensure you get the best experience at Mothutlung SDA Church online. 🛡️</p>
+    <button class="cookie-btn" onclick="acceptCookies()">Accept & Close</button>
+</div>
 </body>
 
 </html>
+
 
 
 
