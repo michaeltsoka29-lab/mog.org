@@ -264,6 +264,59 @@
         gap: 8px; /* Tightens the space between logo and text */
     }
 }
+        .beliefs-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.accordion details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion summary {
+    padding: 15px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none; /* Removes default arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none; /* Hides arrow in Safari */
+}
+
+.accordion summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: #C5A059; /* Your accent gold */
+}
+
+.accordion details[open] summary::after {
+    content: '−';
+}
+
+.belief-content {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    line-height: 1.6;
+}
+
+.verses {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #666;
+}
     </style>
 </head>
 <body>
@@ -327,7 +380,37 @@
             </div>
         </div>
     </section>
+     <section class="beliefs-section">
+    <h2>Our 28 Fundamental Beliefs</h2>
+    <p>Seventh-day Adventists accept the Bible as their only creed and hold certain fundamental beliefs to be the teaching of the Holy Scriptures.</p>
 
+    <div class="accordion">
+        <details>
+            <summary>1. The Holy Scriptures</summary>
+            <div class="belief-content">
+                <p>The Holy Scriptures, Old and New Testaments, are the written Word of God, given by divine inspiration through holy men of God who spoke and wrote as they were moved by the Holy Spirit.</p>
+                <span class="verses">2 Peter 1:20, 21; 2 Tim. 3:16, 17; Ps. 119:105</span>
+            </div>
+        </details>
+
+        <details>
+            <summary>2. The Trinity</summary>
+            <div class="belief-content">
+                <p>There is one God: Father, Son, and Holy Spirit, a unity of three co-eternal Persons. God is immortal, all-powerful, all-knowing, above all, and ever present.</p>
+                <span class="verses">Deut. 6:4; Matt. 28:19; 2 Cor. 13:14</span>
+            </div>
+        </details>
+
+        <details>
+            <summary>3. The Father</summary>
+            <div class="belief-content">
+                <p>God the eternal Father is the Creator, Source, Sustainer, and Sovereign of all creation. He is just and holy, merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness.</p>
+                <span class="verses">Gen. 1:1; Rev. 4:11; John 3:16</span>
+            </div>
+        </details>
+
+        </div>
+</section>
     <section class="section-container" style="display: block; text-align: center;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Church Leadership</h2>
         <p>Meet the dedicated team serving our congregation.</p>
@@ -535,6 +618,7 @@ backToTopBtn.addEventListener('click', () => {
 </body>
 
 </html>
+
 
 
 
