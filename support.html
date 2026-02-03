@@ -184,6 +184,94 @@
     background: var(--church-blue);
     color: white;
 }
+        :root {
+    --church-green: #2d5a43;
+    --church-gold: #c09646;
+    --text-dark: #1a1a1a;
+    --bg-light: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Match the Home Page Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Info Bar Style (Matches your Sabbath School bar) */
+.info-bar {
+    background-color: var(--church-green);
+    color: #dfd3c3; /* Light gold text from your screenshot */
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+}
+
+/* Support Cards */
+.church-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: var(--transition);
+    border-bottom: 5px solid var(--church-green);
+}
+
+.church-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Buttons (Matching your "Join us" button) */
+.btn-gold {
+    background-color: var(--church-gold);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-gold:hover {
+    opacity: 0.9;
+}
+
+/* Form Styling */
+.form-box {
+    background: #f4f4f4;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+input, select, textarea {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    width: 100%;
+}
     </style>
 </head>
 <body>
