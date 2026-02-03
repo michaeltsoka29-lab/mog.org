@@ -190,6 +190,35 @@
             .nav-links a { margin: 10px 0; }
             .church-name { font-size: 0.85rem; max-width: 180px; }
         }
+        .floating-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+.floating-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp { background-color: #25D366; }
+.email { background-color: #007bff; }
     </style>
 </head>
 <body>
@@ -339,6 +368,7 @@
 </div>
 </body>
 </html>
+
 
 
 
