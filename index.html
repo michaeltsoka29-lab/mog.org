@@ -44,18 +44,26 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('indexone.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
+    /* 1. Set the height (100vh means 100% of the screen height) */
+    height: 100vh; 
 
+    /* 2. Add the dark overlay and your image */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('indexone.jpeg');
+
+    /* 3. VITAL: Make the image cover the area smoothly */
+    background-size: cover;       /* Ensures image covers the whole box */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+
+    /* 4. Center the text over the image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
@@ -875,6 +883,7 @@ window.onload = function() {
 </body>
 
 </html>
+
 
 
 
