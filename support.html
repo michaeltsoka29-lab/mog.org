@@ -3,186 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Center | Support</title>
+    <title>Contact & Prayer Requests | Mothotlung SDA Church</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --accent: #6366f1; /* Modern Indigo */
-            --bg: #fdfdfd;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --card-bg: #ffffff;
+            --church-blue: #1a365d; /* Traditional SDA Blue */
+            --gold: #d4af37;
+            --clay: #fdfaf6;
+            --text: #2d3748;
+            --transition: all 0.4s ease;
         }
+
+        [data-theme="dark"] {
+            --clay: #1a202c;
+            --text: #f7fafc;
+            --church-blue: #63b3ed;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            margin: 0;
-            background-color: var(--bg);
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--clay);
+            color: var(--text);
+            line-height: 1.8;
         }
 
-        /* Hero Section */
+        /* Hero Section with Church identity */
         .hero {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
-
-        .search-mockup {
-            max-width: 500px;
-            margin: 20px auto 0;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 12px 20px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), 
+                        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=1500'); /* Peaceful background */
+            background-size: cover;
+            background-position: center;
             color: white;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: -50px auto 60px;
-            padding: 0 20px;
+        .hero h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(2.5rem, 6vw, 4rem); 
+            margin-bottom: 10px;
         }
+
+        .hero p { font-weight: 300; font-size: 1.2rem; opacity: 0.9; }
 
         /* Support Cards */
-        .grid {
+        .container { max-width: 1100px; margin: -60px auto 80px; padding: 0 20px; }
+
+        .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
         }
 
-        .card {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+        .church-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            border: 1px solid #f1f1f1;
-            transition: transform 0.2s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+            transition: var(--transition);
         }
 
-        .card:hover { transform: translateY(-8px); }
+        [data-theme="dark"] .church-card { background: #2d3748; border-top-color: var(--gold); }
 
-        .card .icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            display: block;
-        }
+        .church-card:hover { transform: translateY(-10px); }
 
-        .card h3 { margin: 10px 0; font-size: 1.25rem; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
-
-        .btn-link {
+        .btn-church {
             display: inline-block;
-            margin-top: 15px;
-            color: var(--accent);
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: var(--church-blue);
+            color: white;
             text-decoration: none;
+            border-radius: 50px;
             font-weight: 600;
             font-size: 0.9rem;
         }
 
-        /* Contact Section */
-        .contact-wrapper {
+        /* Prayer Request / Contact Form */
+        .contact-section {
+            margin-top: 80px;
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (max-width: 850px) { .contact-section { grid-template-columns: 1fr; } }
+
+        .form-box {
             background: white;
             padding: 40px;
-            border-radius: 20px;
+            border-radius: 30px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.03);
         }
 
-        @media (max-width: 768px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-        }
+        [data-theme="dark"] .form-box { background: #2d3748; }
 
-        .form-info h2 { font-size: 2rem; margin-top: 0; }
-        
-        input, textarea, select {
+        input, select, textarea {
             width: 100%;
-            padding: 14px;
-            margin-bottom: 15px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #f9fafb;
-            font-size: 1rem;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: var(--clay);
+            color: var(--text);
         }
 
-        input:focus { outline: 2px solid var(--accent); border-color: transparent; }
-
-        button {
-            background: var(--accent);
-            color: white;
-            padding: 16px;
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
             border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            width: 100%;
+            padding: 10px 20px;
+            border-radius: 30px;
             cursor: pointer;
-            transition: opacity 0.2s;
+            color: white;
+            font-weight: bold;
+            z-index: 1000;
         }
-
-        button:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
 
+<button class="theme-toggle" id="theme-btn">Change Theme</button>
+
 <section class="hero">
-    <h1>Help Center</h1>
-    <p>Everything you need to get the most out of our service.</p>
-    <div class="search-mockup">How can we help today?</div>
+    <p>Mothotlung Seventh-day Adventist Church</p>
+    <h1>How can we pray for you?</h1>
+    <p>We are here to serve, listen, and grow together in faith.</p>
 </section>
 
 <div class="container">
-    <div class="grid">
-        <div class="card">
-            <span class="icon">💬</span>
-            <h3>WhatsApp Support</h3>
-            <p>Instant chat with our team for quick questions.</p>
-            <a href="https://wa.me/1234567890" class="btn-link">Chat on WhatsApp →</a>
+    <div class="service-grid">
+        <div class="church-card">
+            <h2 style="font-size: 1.5rem;">Pastoral Support</h2>
+            <p>Need spiritual guidance or a home visit? Connect with our elders.</p>
+            <a href="https://wa.me/..." class="btn-church">WhatsApp Elder</a>
         </div>
-        <div class="card">
-            <span class="icon">✉️</span>
-            <h3>Email Tickets</h3>
-            <p>For detailed technical issues and billing inquiries.</p>
-            <a href="mailto:support@example.com" class="btn-link">Open a ticket →</a>
+        <div class="church-card">
+            <h2 style="font-size: 1.5rem;">Prayer Requests</h2>
+            <p>Your requests are kept confidential and prayed over by our team.</p>
+            <a href="mailto:prayer@mothotlungsda.org" class="btn-church">Email Prayer Team</a>
         </div>
-        <div class="card">
-            <span class="icon">📚</span>
-            <h3>Knowledge Base</h3>
-            <p>Read our documentation and tutorials.</p>
-            <a href="#" class="btn-link">Browse Articles →</a>
+        <div class="church-card">
+            <h2 style="font-size: 1.5rem;">Sabbath School</h2>
+            <p>Questions about our weekly lessons or service times?</p>
+            <a href="#" class="btn-church">View Schedule</a>
         </div>
     </div>
 
-    <div class="contact-wrapper">
-        <div class="form-info">
-            <h2>Send a message</h2>
-            <p>Can't find what you're looking for? Drop us a line and we'll get back to you within 24 hours.</p>
-            <p style="margin-top: 20px;"><strong>Office Hours:</strong><br> Mon-Fri: 9am - 5pm</p>
+    <div class="contact-section">
+        <div class="info-text">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Get in Touch</h2>
+            <p>Whether you're a long-time member or a first-time visitor, we welcome your questions and feedback.</p>
+            <div style="margin-top: 30px;">
+                <p><strong>📍 Location:</strong> Mothotlung, North West</p>
+                <p><strong>⏰ Service Times:</strong> Saturdays @ 09:00 AM</p>
+            </div>
         </div>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <select>
-                <option>Technical Issue</option>
-                <option>Billing Question</option>
-                <option>General Feedback</option>
-            </select>
-            <textarea rows="5" placeholder="Tell us more about your request..."></textarea>
-            <button type="submit">Submit Request</button>
-        </form>
+        <div class="form-box">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email">
+                <select>
+                    <option>Prayer Request</option>
+                    <option>Membership Inquiry</option>
+                    <option>Community Service</option>
+                    <option>Other</option>
+                </select>
+                <textarea rows="4" placeholder="How can we help?"></textarea>
+                <button type="submit" class="btn-church" style="width: 100%; border: none; cursor: pointer;">Submit Message</button>
+            </form>
+        </div>
     </div>
 </div>
+
+<script>
+    const btn = document.getElementById('theme-btn');
+    btn.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+    });
+</script>
 
 </body>
 </html>
