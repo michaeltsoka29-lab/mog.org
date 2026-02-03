@@ -541,6 +541,63 @@
 .email { background-color: #007bff; }
         /* Unique color for the support page button (e.g., Orange or Purple) */
 .support-page { background-color: #ff9800; }
+
+
+
+        .branch-card-interactive {
+    display: flex;
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+/* The Cool Hover Effect */
+.branch-card-interactive:hover {
+    transform: translateY(-10px); /* Lifts the card up */
+    box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2); /* Adds a golden glow */
+}
+
+.branch-image {
+    width: 40%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.branch-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #C5A059;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.branch-info {
+    padding: 30px;
+    width: 60%;
+}
+
+.visit-branch-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #C5A059;
+    font-weight: bold;
+    text-decoration: none;
+    transition: padding-left 0.3s ease;
+}
+
+.visit-branch-btn:hover {
+    padding-left: 10px; /* Arrows moves slightly on hover */
+}
     </style>
 </head>
 <body>
@@ -601,7 +658,22 @@
             <a href="about.html" style="color: var(--primary-green); font-weight: 700; text-decoration: none;">Our Beliefs & Mission →</a>
         </div>
     </section>
-
+     <section class="branch-feature">
+    <div class="branch-card-interactive">
+        <div class="branch-image" style="background-image: url('brits-branch.jpg');">
+            <div class="branch-tag">Our New Branch</div>
+        </div>
+        <div class="branch-info">
+            <h3>Brits SDA Branch</h3>
+            <p>Serving the community in the heart of Brits.</p>
+            <ul class="branch-details">
+                <li>📍 123 Church Street, Brits</li>
+                <li>🕒 Saturdays @ 09:30 AM</li>
+            </ul>
+            <a href="brits.html" class="visit-branch-btn">View Brits Site →</a>
+        </div>
+    </div>
+</section>
     <section class="features">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Explore Our Church</h2>
         <div class="feature-grid">
@@ -883,6 +955,7 @@ window.onload = function() {
 </body>
 
 </html>
+
 
 
 
