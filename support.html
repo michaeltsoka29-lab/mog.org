@@ -127,6 +127,63 @@
             font-weight: bold;
             z-index: 1000;
         }
+        .grace-section {
+    margin-top: 100px;
+    background: rgba(26, 54, 93, 0.03);
+    padding: 60px 40px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.grace-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.grace-header .symbol { color: var(--gold); font-size: 1.5rem; }
+
+.support-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) { .support-tabs { grid-template-columns: 1fr; } }
+
+.tab-card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .tab-card { background: #1e293b; border-color: #334155; }
+
+.tab-card:hover { border-color: var(--gold); }
+
+.tab-icon { font-size: 2.5rem; margin-bottom: 15px; }
+
+.tab-card h3 { margin-bottom: 15px; }
+
+.tab-card button {
+    background: transparent;
+    border: 2px solid var(--church-blue);
+    color: var(--church-blue);
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.tab-card button:hover {
+    background: var(--church-blue);
+    color: white;
+}
     </style>
 </head>
 <body>
@@ -157,7 +214,29 @@
             <a href="#" class="btn-church">View Schedule</a>
         </div>
     </div>
+     <div class="grace-section">
+    <div class="grace-header">
+        <span class="symbol">✦</span>
+        <h2>Community Support Hub</h2>
+        <p>“Bear one another’s burdens, and so fulfill the law of Christ.” — Galatians 6:2</p>
+    </div>
 
+    <div class="support-tabs">
+        <div class="tab-card">
+            <div class="tab-icon">📖</div>
+            <h3>Ask a Bible Question</h3>
+            <p>Confused about a scripture or prophecy? Our elders will help you find the answer in the Word.</p>
+            <button onclick="openModal('faith')">Ask Question</button>
+        </div>
+
+        <div class="tab-card">
+            <div class="tab-icon">🤝</div>
+            <h3>Request Assistance</h3>
+            <p>In need of physical help, a home visit, or guidance through a difficult time? Let us walk with you.</p>
+            <button onclick="openModal('help')">Request Help</button>
+        </div>
+    </div>
+</div>
     <div class="contact-section">
         <div class="info-text">
             <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Get in Touch</h2>
