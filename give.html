@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give | Mothutlung SDA Church</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C5A059;
+            --dark-green: #2D4A3E;
+            --white: #ffffff;
+            --soft-bg: #fdfbf7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--soft-bg);
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: var(--dark-green);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Give Hero Section */
+        .give-hero {
+            background: linear-gradient(rgba(45, 74, 62, 0.8), rgba(45, 74, 62, 0.9)), 
+                        url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .give-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .give-hero p {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        /* Donation Grid */
+        .give-container {
+            max-width: 1100px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid var(--gold);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+
+        /* Payment Buttons */
+        .pay-btn {
+            display: block;
+            background: var(--dark-green);
+            color: white;
+            padding: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .pay-btn:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* Bank Details Box */
+        .bank-details {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 20px;
+            border: 1px dashed #ccc;
+        }
+
+        .bank-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            font-size: 0.7rem;
+            color: var(--gold);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .give-container { grid-template-columns: 1fr; margin-top: 20px; }
+            .give-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">Beliefs</a>
+            <a href="brits.html">Brits</a>
+            <a href="give.html" style="color: var(--gold);">Give</a>
+        </nav>
+    </header>
+
+    <section class="give-hero">
+        <h1>Faithful Giving</h1>
+        <p>"Honor the Lord with your wealth..." — Proverbs 3:9</p>
+    </section>
+
+    <main class="give-container">
+        
+        <div class="card">
+            <h3>Online Payment</h3>
+            <p>Quickly and securely give your Tithes or Offerings using your card or Instant EFT via PayFast or Yoco.</p>
+            
+            <a href="https://payfast.co.za/donate/go/mothutlungsda" target="_blank" class="pay-btn">Give Online Now</a>
+            
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">Secure 256-bit encrypted transaction</p>
+        </div>
+
+        <div class="card">
+            <h3>EFT Transfer</h3>
+            <p>You can make a direct deposit or electronic transfer to our church account.</p>
+            
+            <div class="bank-details">
+                <div class="bank-row"><strong>Bank:</strong> <span>First National Bank (FNB)</span></div>
+                <div class="bank-row"><strong>Account Name:</strong> <span>Mothutlung SDA Church</span></div>
+                <div class="bank-row"><strong>Account Number:</strong> <span id="accNum">1234567890</span></div>
+                <div class="bank-row"><strong>Branch Code:</strong> <span>250655</span></div>
+                <div class="bank-row"><strong>Reference:</strong> <span>Name + Tithe/Offering</span></div>
+            </div>
+            
+            <p style="margin-top: 15px; font-size: 0.8rem;">Please email proof of payment to: <br><strong>treasury@mothotlungsdachurch.org</strong></p>
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: #888; font-size: 0.8rem;">
+        © 2026 Mothutlung Seventh-day Adventist Church. All gifts are tax-deductible.
+    </footer>
+
+</body>
+</html>
