@@ -3,187 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Give | Mothutlung SDA Church</title>
+    <title>Invest in Eternity | Mothutlung SDA</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --gold: #C5A059;
-            --dark-green: #2D4A3E;
+            --dark-green: #1a3c34;
+            --deep-black: #0d1a17;
             --white: #ffffff;
-            --soft-bg: #fdfbf7;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--soft-bg);
-            color: #333;
-        }
+        body { font-family: 'Montserrat', sans-serif; background: #fafafa; color: #333; line-height: 1.7; }
 
-        /* Navigation Bar */
-        header {
-            background: var(--dark-green);
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        /* Navigation */
+        nav { background: var(--dark-green); padding: 20px; text-align: center; position: fixed; width: 100%; z-index: 1000; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        /* Give Hero Section */
-        .give-hero {
-            background: linear-gradient(rgba(45, 74, 62, 0.8), rgba(45, 74, 62, 0.9)), 
-                        url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=2000');
+        /* Cinematic Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(13, 26, 23, 0.7), rgba(13, 26, 23, 0.8)), 
+                        url('https://images.unsplash.com/photo-1510133769068-68884a1273ea?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
             text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 20px; font-style: italic; }
+        .hero p { max-width: 600px; font-size: 1.1rem; color: var(--gold); font-weight: 300; }
+
+        /* Marketing Tactic: The Rule of Three (Impact Areas) */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: -100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .impact-card:hover { transform: translateY(-10px); }
+        .impact-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: var(--dark-green); }
+
+        /* Scriptural Motivation Section */
+        .scripture-section {
+            padding: 100px 10%;
+            text-align: center;
+            background: var(--deep-black);
             color: white;
         }
 
-        .give-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-
-        .give-hero p {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--gold);
-        }
-
-        /* Donation Grid */
-        .give-container {
-            max-width: 1100px;
-            margin: -50px auto 50px;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            text-align: center;
-            border-top: 5px solid var(--gold);
-        }
-
-        .card h3 {
+        .scripture-section blockquote {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            color: var(--dark-green);
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            font-style: italic;
         }
 
-        /* Payment Buttons */
+        /* Giving Options (Tactic: Anchoring) */
+        .giving-options {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-card.highlight {
+            border: 2px solid var(--gold);
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--gold);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
         .pay-btn {
             display: block;
             background: var(--dark-green);
             color: white;
-            padding: 18px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        .pay-btn:hover {
-            background: var(--gold);
-            transform: translateY(-3px);
-        }
-
-        /* Bank Details Box */
-        .bank-details {
-            background: #f9f9f9;
+            text-align: center;
             padding: 20px;
-            border-radius: 10px;
-            text-align: left;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: 0.4s;
+        }
+
+        .pay-btn:hover { background: var(--gold); letter-spacing: 2px; }
+
+        .bank-details {
+            background: #f4f4f4;
+            padding: 25px;
+            border-radius: 15px;
             margin-top: 20px;
-            border: 1px dashed #ccc;
-        }
-
-        .bank-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .copy-btn {
-            font-size: 0.7rem;
-            color: var(--gold);
-            cursor: pointer;
-            text-decoration: underline;
+            font-family: monospace;
         }
 
         @media (max-width: 768px) {
-            .give-container { grid-template-columns: 1fr; margin-top: 20px; }
-            .give-hero h1 { font-size: 2.5rem; }
+            .impact-grid, .giving-options { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .impact-grid { margin-top: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">Beliefs</a>
-            <a href="brits.html">Brits</a>
-            <a href="give.html" style="color: var(--gold);">Give</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="brits.html">Brits Branch</a>
+        <a href="titili.html">Titili Branch</a>
+        <a href="give.html" style="color: var(--gold);">Give</a>
+    </nav>
 
-    <section class="give-hero">
-        <h1>Faithful Giving</h1>
-        <p>"Honor the Lord with your wealth..." — Proverbs 3:9</p>
+    <section class="hero">
+        <p>A SACRIFICE OF PRAISE</p>
+        <h1>Generosity Changes Everything</h1>
+        <p>"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." <br><strong>— 2 Corinthians 9:7</strong></p>
     </section>
 
-    <main class="give-container">
+    <div class="impact-grid">
+        <div class="impact-card">
+            <h3>Community</h3>
+            <p>Feeding the hungry and supporting families in Mothutlung.</p>
+        </div>
+        <div class="impact-card">
+            <h3>Mission</h3>
+            <p>Spreading the Three Angels' Messages to Brits and Titili.</p>
+        </div>
+        <div class="impact-card">
+            <h3>Future</h3>
+            <p>Investing in our Youth and Pathfinder ministries.</p>
+        </div>
+    </div>
+
+    <section class="scripture-section">
+        <blockquote>"Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this... and see if I will not throw open the floodgates of heaven."</blockquote>
+        <p>— MALACHI 3:10</p>
+    </section>
+
+    <main class="giving-options">
         
-        <div class="card">
-            <h3>Online Payment</h3>
-            <p>Quickly and securely give your Tithes or Offerings using your card or Instant EFT via PayFast or Yoco.</p>
+        <div class="payment-card highlight">
+            <div class="badge">SECURE</div>
+            <h2>Tithe & Offerings</h2>
+            <p>Make an instant, secure contribution through our digital partner. Fast, easy, and recorded.</p>
             
-            <a href="https://payfast.co.za/donate/go/mothutlungsda" target="_blank" class="pay-btn">Give Online Now</a>
-            
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">Secure 256-bit encrypted transaction</p>
+            <ul style="margin-top:20px; list-style: none;">
+                <li>✅ <strong>Instant EFT</strong></li>
+                <li>✅ <strong>Credit/Debit Card</strong></li>
+                <li>✅ <strong>Safe & Encrypted</strong></li>
+            </ul>
+
+            <a href="YOUR_PAYFAST_OR_YOCO_LINK" class="pay-btn">GIVE ONLINE NOW</a>
+            <p style="font-size: 0.8rem; margin-top: 15px; text-align: center;">"God is not unjust; He will not forget your work and the love you have shown Him." — Heb 6:10</p>
         </div>
 
-        <div class="card">
-            <h3>EFT Transfer</h3>
-            <p>You can make a direct deposit or electronic transfer to our church account.</p>
+        <div class="payment-card">
+            <h2>EFT Transfer</h2>
+            <p>Prefer a direct bank transfer? Use the details below for tithing or specific project donations.</p>
             
             <div class="bank-details">
-                <div class="bank-row"><strong>Bank:</strong> <span>First National Bank (FNB)</span></div>
-                <div class="bank-row"><strong>Account Name:</strong> <span>Mothutlung SDA Church</span></div>
-                <div class="bank-row"><strong>Account Number:</strong> <span id="accNum">1234567890</span></div>
-                <div class="bank-row"><strong>Branch Code:</strong> <span>250655</span></div>
-                <div class="bank-row"><strong>Reference:</strong> <span>Name + Tithe/Offering</span></div>
+                <strong>BANK:</strong> FNB<br>
+                <strong>ACC NAME:</strong> Mothutlung SDA Church<br>
+                <strong>ACC NO:</strong> 1234567890<br>
+                <strong>BRANCH:</strong> 250655<br>
+                <strong>REF:</strong> Your Name + Purpose
             </div>
-            
-            <p style="margin-top: 15px; font-size: 0.8rem;">Please email proof of payment to: <br><strong>treasury@mothotlungsdachurch.org</strong></p>
+
+            <p style="margin-top: 25px;"><strong>Marketing Tip:</strong> Did you know 90% of our branch growth is funded by faithful EFT partners? Your gift today builds a church tomorrow.</p>
         </div>
 
     </main>
 
-    <footer style="text-align: center; padding: 40px; color: #888; font-size: 0.8rem;">
-        © 2026 Mothutlung Seventh-day Adventist Church. All gifts are tax-deductible.
+    <footer style="background: var(--deep-black); color: rgba(255,255,255,0.5); padding: 80px 20px; text-align: center;">
+        <p>Mothutlung Seventh-day Adventist Church</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">"The world asks: 'What does a man own?' Christ asks: 'How does he use it?'"</p>
     </footer>
 
 </body>
