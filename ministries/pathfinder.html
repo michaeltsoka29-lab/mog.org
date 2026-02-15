@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder Club | Mothutlung SDA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --pathfinder-red: #d32f2f;
+            --pathfinder-yellow: #fbc02d;
+            --brand-green: #2D4A3E;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-text { color: var(--brand-green); font-weight: 700; }
+        nav a { text-decoration: none; color: #555; margin-left: 20px; font-size: 0.9rem; font-weight: 500; }
+
+        /* Hero Section */
+        .pathfinder-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .pathfinder-hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; }
+        .pathfinder-hero p { font-size: 1.2rem; color: var(--pathfinder-yellow); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Club Identity Section */
+        .identity-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .identity-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--pathfinder-red);
+        }
+        .identity-card h3 { color: var(--brand-green); margin-bottom: 15px; }
+
+        /* Classes/Levels Section */
+        .classes-section {
+            background: var(--brand-green);
+            color: white;
+            padding: 80px 8%;
+            text-align: center;
+        }
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .class-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--pathfinder-yellow);
+            transition: 0.3s;
+        }
+        .class-item:hover { background: var(--pathfinder-yellow); color: var(--brand-green); transform: translateY(-5px); }
+
+        /* Call to Action */
+        .join-section {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .btn-join {
+            background: var(--pathfinder-red);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pathfinder-hero h1 { font-size: 2.5rem; }
+            .identity-section { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-text">Mothutlung SDA</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="ministries.html">Ministries</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <a href="javascript:void(0);" onclick="history.back();" style="position: fixed; bottom: 30px; left: 30px; background: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; color: var(--brand-green); font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 2000;">← Back</a>
+
+    <header class="pathfinder-hero">
+        <p>A Church Ministry for Youth</p>
+        <h1>Pathfinder Club</h1>
+    </header>
+
+    <section class="identity-section">
+        <div class="identity-card">
+            <h3>The Pledge</h3>
+            <p>"By the grace of God, I will be pure, and kind, and true. I will keep the Pathfinder Law. I will be a servant of God and a friend to man."</p>
+        </div>
+        <div class="identity-card">
+            <h3>The Law</h3>
+            <p>The Pathfinder Law is for me to: Keep the morning watch, Do my honest part, Care for my body, Keep a level eye, Be courteous and obedient...</p>
+        </div>
+    </section>
+
+    <section class="classes-section">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Pathfinder Classes</h2>
+        <p>Progressing through the ranks of leadership and skill.</p>
+        <div class="class-grid">
+            <div class="class-item"><strong>Friend</strong><br>Grade 5</div>
+            <div class="class-item"><strong>Companion</strong><br>Grade 6</div>
+            <div class="class-item"><strong>Explorer</strong><br>Grade 7</div>
+            <div class="class-item"><strong>Ranger</strong><br>Grade 8</div>
+            <div class="class-item"><strong>Voyager</strong><br>Grade 9</div>
+            <div class="class-item"><strong>Guide</strong><br>Grade 10</div>
+        </div>
+    </section>
+
+    
+
+    <section class="join-section">
+        <h2>Ready to Join the Adventure?</h2>
+        <p>Our club meets every Sunday at 10:00 AM at the church grounds.</p>
+        <a href="https://wa.me/27721571102" class="btn-join">Register My Child</a>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #eee; font-size: 0.8rem; color: #777;">
+        &copy; 2026 Mothutlung SDA Pathfinder Club. Led by the Holy Spirit.
+    </footer>
+
+</body>
+</html>
