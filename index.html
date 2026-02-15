@@ -692,24 +692,7 @@
         </div>
     </div>
 </div>
-    <script>
-    // Function to show the popup after 3 seconds
-    window.onload = function() {
-        setTimeout(function() {
-            // Check if user has already closed it in this session
-            if (!sessionStorage.getItem('popupClosed')) {
-                document.getElementById('media-popup').style.display = 'flex';
-            }
-        }, 3000); // 3000ms = 3 seconds delay
-    };
-
-    // Function to close the popup
-    function closePopup() {
-        document.getElementById('media-popup').style.display = 'none';
-        // Remember that the user closed it
-        sessionStorage.setItem('popupClosed', 'true');
-    }
-</script>
+    
    <nav>
     <a href="index.html" class="logo-container">
         <img src="adventist-symbol-circle--denim.png" alt="SDA Logo" class="sda-logo">
@@ -1076,7 +1059,23 @@ window.onload = function() {
         document.getElementById('cookie-banner').style.display = 'block';
     }
 }
-    
+    // Function to show the popup after 3 seconds
+    window.onload = function() {
+        setTimeout(function() {
+            // Check if user has already closed it in this session
+            if (!sessionStorage.getItem('popupClosed')) {
+                document.getElementById('media-popup').style.display = 'flex';
+            }
+        }, 3000); // 3000ms = 3 seconds delay
+    };
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('media-popup').style.display = 'none';
+        // Remember that the user closed it
+        sessionStorage.setItem('popupClosed', 'true');
+    }
+
 </script>
 
     <div id="cookie-banner">
@@ -1108,6 +1107,7 @@ window.onload = function() {
 </body>
 
 </html>
+
 
 
 
