@@ -16,7 +16,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fdfbf7; }
 
-        /* Matching Header */
+        /* Navigation Style */
         header {
             background: var(--white);
             padding: 15px 5%;
@@ -43,50 +43,66 @@
         }
 
         .gallery-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
-        .gallery-header p { color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
 
-        /* The Photo Grid */
+        /* The Masonry Grid */
         .gallery-container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
-            column-count: 3; /* Creates the masonry look */
+            column-count: 3;
             column-gap: 20px;
         }
 
         .gallery-item {
             margin-bottom: 20px;
             break-inside: avoid;
-            position: relative;
-            overflow: hidden;
+            cursor: pointer;
             border-radius: 15px;
+            overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: 0.4s;
+            transition: transform 0.3s ease;
         }
+
+        .gallery-item:hover { transform: translateY(-5px); }
 
         .gallery-item img {
             width: 100%;
             display: block;
-            transition: 0.5s;
         }
 
-        /* Hover Effect */
-        .gallery-item:hover { transform: scale(1.02); }
-        .gallery-item:hover img { filter: brightness(70%); }
+        /* --- LIGHTBOX STYLES --- */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-        .gallery-item:hover::after {
-            content: "View Photo";
+        #lightbox-img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .close-btn {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 30px;
+            right: 40px;
             color: white;
+            font-size: 40px;
             font-weight: bold;
-            border: 2px solid var(--gold);
-            padding: 10px 20px;
-            border-radius: 50px;
+            cursor: pointer;
         }
 
+        /* Responsive */
         @media (max-width: 768px) { .gallery-container { column-count: 2; } }
         @media (max-width: 480px) { .gallery-container { column-count: 1; } }
     </style>
@@ -99,62 +115,44 @@
             <a href="index.html">Home</a>
             <a href="brits.html">Brits</a>
             <a href="titili.html">Titili</a>
-           
+            <a href="give.html">Give</a>
         </nav>
     </header>
 
     <section class="gallery-header">
         <h1>Moments of Faith</h1>
-        <p>Life at Mothutlung, Brits & Titili</p>
     </section>
 
-    <a href="javascript:void(0);" onclick="history.back();" style="position: fixed; bottom: 30px; left: 30px; background: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; color: var(--brand-green); font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center; gap: 8px;">← Back</a>
+    <a href="javascript:void(0);" onclick="history.back();" style="position: fixed; bottom: 30px; left: 30px; background: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; color: var(--brand-green); font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000;">← Back</a>
 
     <main class="gallery-container">
-        <div class="gallery-item"><img src="meme1.jpeg" alt="Church Service"></div>
-        <div class="gallery-item"><img src="meta.jpeg" alt="Church Choir"></div>
-        <div class="gallery-item"><img src="pathfinders.jpg" alt="Pathfinders"></div>
-        <div class="gallery-item"><img src="community-service.jpg" alt="Community Outreach"></div>
-        <div class="gallery-item"><img src="baptisms.jpg" alt="Baptism Ceremony"></div>
-        <div class="gallery-item"><img src="youth-day.jpg" alt="Youth Day"></div>
+        <div class="gallery-item"><img src="image1.jpg" alt="Gallery Image" onclick="openLightbox(this.src)"></div>
+        <div class="gallery-item"><img src="image2.jpg" alt="Gallery Image" onclick="openLightbox(this.src)"></div>
+        <div class="gallery-item"><img src="image3.jpg" alt="Gallery Image" onclick="openLightbox(this.src)"></div>
     </main>
-<a href="javascript:void(0);" onclick="history.back();" class="back-floating-btn">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    <span>Back</span>
-</a>
 
-<style>
-    .back-floating-btn {
-        position: fixed;
-        bottom: 30px;
-        left: 30px;
-        background-color: #ffffff;
-        color: #2D4A3E; /* Matching your Brand Green */
-        padding: 12px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: bold;
-        font-size: 0.9rem;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        z-index: 9999;
-        transition: all 0.3s ease;
-        border: 1px solid #eee;
-    }
+    <div id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
 
-    .back-floating-btn:hover {
-        background-color: #C5A059; /* Your Brand Gold */
-        color: white;
-        transform: translateX(-5px);
-    }
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
 
-    /* On very small phones, make it a simple circle to save space */
-    @media (max-width: 480px) {
-        .back-floating-btn span { display: none; }
-        .back-floating-btn { padding: 12px; border-radius: 50%; }
-    }
-</style>
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Close when clicking background
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('lightbox')) {
+                closeLightbox();
+            }
+        }
+    </script>
+
 </body>
 </html>
