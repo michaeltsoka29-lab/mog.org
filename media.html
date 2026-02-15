@@ -310,14 +310,13 @@ audio {
 </header>
 
 <button id="backToTop" class="back-to-top">↑</button>
-
-<main class="archive-container">
+    <main class="archive-container">
     
     <h2 class="section-title">Local Sermons</h2>
     <div class="sermon-grid">
         <div class="sermon-card">
             <div class="video-thumb-container">
-                <iframe src="https://www.youtube.com/@MothotlungAdventist"></iframe>
+                <iframe src="https://www.youtube.com/embed/O55TNDg4AU4"></iframe>
             </div>
             <div class="sermon-info">
                 <span class="tag">MOTHUTLUNG SDA</span>
@@ -325,9 +324,10 @@ audio {
                 <p>Pastor Randy Skeete</p>
             </div>
         </div>
+
         <div class="sermon-card">
             <div class="video-thumb-container">
-                <iframe src="https://www.youtube.com/@MothotlungAdventist"></iframe>
+                <iframe src="https://www.youtube.com/embed/O55TNDg4AU4"></iframe>
             </div>
             <div class="sermon-info">
                 <span class="tag">MOTHUTLUNG SDA</span>
@@ -335,13 +335,11 @@ audio {
                 <p>Recorded at Mothutlung</p>
             </div>
         </div>
-       
-
-    <h2 class="section-title">Inspired Listening</h2>
+    </div> <h2 class="section-title">Inspired Listening</h2>
     <div class="sermon-grid">
         <div class="sermon-card">
             <div class="video-thumb-container">
-                <iframe src="https://www.youtube.com/@MothotlungAdventist"></iframe>
+                <iframe src="https://www.youtube.com/embed/O55TNDg4AU4"></iframe>
             </div>
             <div class="sermon-info">
                 <span class="tag">GLOBAL ADVENTIST</span>
@@ -349,17 +347,61 @@ audio {
                 <p>Faith for Today Series</p>
             </div>
         </div>
-        <div class="sermon-card">
-            <div class="video-thumb-container">
-                <iframe src="https://www.youtube.com/@hopechannelsouthphil"></iframe>
+    </div>
+
+    <h2 class="section-title">Adventist Radio Global</h2>
+    <div class="radio-grid">
+        <a href="https://awr.live/" target="_blank" class="radio-card-link">
+            <div class="radio-card">
+                <div class="radio-icon">🇿🇦</div>
+                <div class="radio-info">
+                    <h4>AWR SIDmedia</h4>
+                    <p>Southern Africa • Listen Live</p>
+                    <span class="visit-tag">Visit Station →</span>
+                </div>
             </div>
-            <div class="sermon-info">
-                <span class="tag">BIBLE STUDY</span>
-                <h4>Prophecy Unlocked</h4>
-                <p>Amazing Facts</p>
+        </a>
+
+        <div class="radio-card">
+            <div class="radio-icon">🎵</div>
+            <div class="radio-info">
+                <h4>Adventist Music Radio</h4>
+                <p>Music for the Soul</p>
+                <audio controls style="width: 100%; height: 30px; margin-top: 10px;">
+                    <source src="https://edge.iono.fm/xice/187_medium.aac" type="audio/aac">
+                </audio>
             </div>
         </div>
     </div>
+</main>
+
+<style>
+    .floating-container {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 999;
+    }
+    .floating-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+    .whatsapp { background: #25D366; }
+    .email { background: var(--primary-green); }
+    .support-page { background: var(--accent-gold); }
+    .floating-button:hover { transform: scale(1.1); }
+</style>
 
     <section class="sermon-downloads">
     <div class="container">
@@ -429,11 +471,7 @@ audio {
             </div>
         </div>
     </a>
-
-</div>
-    
-</div>
-
+ </div>
     <div class="radio-card">
         <div class="radio-icon">🇿🇦</div>
         <div class="radio-info">
@@ -445,6 +483,7 @@ audio {
             </audio>
         </div>
     </div>
+         </div>
 </main>
 
 <footer class="site-footer">
@@ -637,6 +676,7 @@ audio {
 </div>
 </body>
 </html>
+
 
 
 
