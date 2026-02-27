@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Outreach | Mothotlung SDA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --outreach-blue: #2A5D67; /* A trustworthy, calm teal/blue */
+            --accent-orange: #E67E22; /* For "Join Us" buttons */
+            --light-bg: #F9F9F9;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; margin: 0; background: var(--light-bg); line-height: 1.6; }
+
+        /* Hero */
+        .outreach-hero {
+            background: linear-gradient(rgba(42, 93, 103, 0.85), rgba(42, 93, 103, 0.85)), url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .outreach-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0; }
+
+        /* Mission Statement */
+        .mission-bar {
+            background: white;
+            padding: 40px 8%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Program Grid */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 60px 8%;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        .program-img { width: 100%; height: 220px; object-fit: cover; }
+
+        .program-body { padding: 30px; flex-grow: 1; }
+
+        .program-body h3 { color: var(--outreach-blue); margin-top: 0; }
+
+        .tag {
+            display: inline-block;
+            background: #E8F0F2;
+            color: var(--outreach-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* Call to Action */
+        .volunteer-cta {
+            background: var(--outreach-blue);
+            color: white;
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .btn-join {
+            background: var(--accent-orange);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        .btn-join:hover { background: #D35400; transform: scale(1.05); }
+
+    </style>
+</head>
+<body>
+
+    <header class="outreach-hero">
+        <h1>Hands to Serve, Hearts to Love</h1>
+        <p>Extending God's grace to the Mothotlung community and beyond.</p>
+    </header>
+
+    <section class="mission-bar">
+        <h2 style="font-family: 'Playfair Display';">"As each has received a gift, use it to serve one another."</h2>
+        <p>— 1 Peter 4:10</p>
+    </section>
+
+    <div class="programs-grid">
+        <div class="program-card">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" alt="Food Distribution" class="program-img">
+            <div class="program-body">
+                <span class="tag">MONTHLY</span>
+                <h3>Community Food Pantry</h3>
+                <p>Helping families in need by providing essential groceries and warm meals. No one in our village should go to bed hungry.</p>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="Youth Mentorship" class="program-img">
+            <div class="program-body">
+                <span class="tag">EVERY TUESDAY</span>
+                <h3>Pathfinders & Adventurers</h3>
+                <p>Building character and skills in our children through outdoor activities, community service, and spiritual growth.</p>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <img src="https://images.unsplash.com/photo-1505751172107-5739a007260e?auto=format&fit=crop&q=80&w=800" alt="Health Screening" class="program-img">
+            <div class="program-body">
+                <span class="tag">QUARTERLY</span>
+                <h3>Free Health Screenings</h3>
+                <p>From blood pressure checks to lifestyle counseling, we help our neighbors live longer, healthier lives.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <section class="volunteer-cta">
+        <h2>Want to make a difference?</h2>
+        <p>Whether you have an hour or a whole day, there is a place for you to serve.</p>
+        <a href="connect.html" class="btn-join">VOLUNTEER WITH US</a>
+    </section>
+
+    <footer style="text-align: center; padding: 40px;">
+        <a href="index.html" style="color: var(--outreach-blue); text-decoration: none; font-weight: bold;">← Return Home</a>
+    </footer>
+
+</body>
+</html>
