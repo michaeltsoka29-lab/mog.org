@@ -610,7 +610,7 @@
 .visit-branch-btn:hover {
     padding-left: 10px; /* Arrows moves slightly on hover */
 }
-       /* Popup overlay */
+      /* Popup overlay */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -629,47 +629,53 @@
     position: relative;
     background: white;
     border-radius: 15px;
-    max-width: 500px;  /* limits width */
+    max-width: 500px;
     width: 90%;
     padding: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 
-/* Close button */
+/* Image wrapper */
+.popup-image-wrapper {
+    position: relative;
+}
+
+/* Popup image */
+.popup-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Close button on top of image */
 .close-popup {
     position: absolute;
     top: 10px;
-    right: 15px;
-    font-size: 24px;
+    right: 10px;
+    font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: white;
+    background: rgba(0,0,0,0.5); /* semi-transparent background */
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
     cursor: pointer;
     z-index: 10;
 }
 
-/* Popup inner content */
-.popup-inner {
-    text-align: center;
-}
-
-/* Image */
-.popup-image {
-    width: 100%;
-    max-height: 200px; /* limits image height */
-    object-fit: cover;  /* maintains aspect ratio */
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Badge / Phrase */
+/* Badge */
 .popup-badge {
     display: inline-block;
-    background-color: #FF6F61; 
+    background-color: #FF6F61;
     color: white;
     padding: 5px 12px;
     border-radius: 5px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 10px 0;
     font-size: 0.9rem;
 }
 
@@ -685,22 +691,38 @@
     font-size: 1rem;
     line-height: 1.4;
 }
+
+/* Button */
+.popup-btn {
+    display: inline-block;
+    background-color: #FF6F61;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.popup-btn:hover {
+    background-color: #e65550;
+}
     </style>
 </head>
 <body>
 <div id="media-popup" class="popup-overlay">
     <div class="popup-content">
-        <!-- Close button -->
-        <span class="close-popup" onclick="closePopup()">&times;</span>
-
         <div class="popup-inner">
-            <!-- Image -->
-            <img src="images/info1.jpeg" alt="Pathfinder Day" class="popup-image">
+            <!-- Image with close button overlay -->
+            <div class="popup-image-wrapper">
+                <img src="images/info1.jpeg" alt="Pathfinder Day" class="popup-image">
+                <span class="close-popup" onclick="closePopup()">&times;</span>
+            </div>
 
-            <!-- Badge / Phrase -->
+            <!-- Phrase / Badge -->
             <span class="popup-badge">Adventure. Faith. Friendship.</span>
 
-            <!-- Heading -->
+            <!-- Main Heading -->
             <h2>Celebrate Pathfinder Day!</h2>
 
             <!-- Description -->
@@ -1146,6 +1168,7 @@ window.onload = function() {
 </body>
 
 </html>
+
 
 
 
