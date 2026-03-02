@@ -690,6 +690,34 @@
 .close-popup:hover {
     color: #2D4A3E;
 }
+
+        .popup-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.popup-badge {
+    display: inline-block;
+    background-color: #FF6F61; /* nice accent color */
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.popup-inner h2 {
+    margin: 10px 0;
+    font-size: 1.8rem;
+}
+
+.popup-inner p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
     </style>
 </head>
 <body>
@@ -697,10 +725,20 @@
     <div class="popup-content">
         <span class="close-popup" onclick="closePopup()">&times;</span>
         <div class="popup-inner">
-            <span class="popup-badge">WE ARE HIRING</span>
-            <h2>Join the Media Team</h2>
-            <p>Do you have a passion for photography, sound, or social media? Help us spread the Gospel to the digital world.</p>
-            <a href="mteam.html" class="popup-btn">Learn More & Apply</a>
+            <!-- Image -->
+            <img src="images/info.jpeg" alt="Pathfinder Day" class="popup-image">
+
+            <!-- Phrase / Badge -->
+            <span class="popup-badge">Adventure. Faith. Friendship.</span>
+
+            <!-- Main Heading -->
+            <h2>Celebrate Pathfinder Day!</h2>
+
+            <!-- Description -->
+            <p>Join us for fun, learning, and service as we honor God’s guidance and explore His world together.</p>
+
+            <!-- Button -->
+            <a href="ministries/pathfinder.html" class="popup-btn">Learn More & Join</a>
         </div>
     </div>
 </div>
@@ -1139,6 +1177,7 @@ window.onload = function() {
 </body>
 
 </html>
+
 
 
 
