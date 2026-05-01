@@ -243,6 +243,33 @@
 .credit-brand:hover {
     text-decoration: underline;
 }
+
+         /* CONTACT BAR */
+        .contact-bar { position: fixed; top: var(--nav-height); left: 0; width: 100%; background: var(--primary-green); z-index: 999; padding: 10px 8%; box-sizing: border-box; border-top: 1px solid rgba(197,160,89,0.25); }
+        .contact-bar-inner { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: nowrap; }
+        .contact-bar a { color: #f0e6d0; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 7px; transition: color 0.2s; white-space: nowrap; }
+        .contact-bar a i { color: var(--accent-gold); font-size: 0.82rem; }
+        .contact-bar a:hover { color: var(--accent-gold); }
+
+        @media (max-width: 768px) {
+            :root { --nav-height: 66px; --bar-height: 72px; }
+            .contact-bar { padding: 8px 4%; }
+            .contact-bar-inner { gap: 10px 20px; flex-wrap: wrap; justify-content: center; }
+            .contact-bar a { font-size: 0.76rem; }
+        }
+        @media (max-width: 480px) {
+            :root { --nav-height: 90px; --bar-height: 96px; }
+            .contact-bar { padding: 7px 3%; top: 90px; }
+            .contact-bar-inner { flex-direction: column; gap: 6px; align-items: center; }
+            .contact-bar a { font-size: 0.72rem; gap: 5px; }
+            .contact-bar a i { font-size: 0.7rem; }
+        }
+        @media (max-width: 380px) {
+            :root { --nav-height: 95px; --bar-height: 90px; }
+            .contact-bar { top: 95px; }
+            .contact-bar a { font-size: 0.68rem; }
+            .contact-bar a .cb-label { display: none; }
+        }
         
     </style>
 </head>
